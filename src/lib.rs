@@ -200,7 +200,6 @@ mod linux {
 
     mod mprotect {
         use core::{cell::UnsafeCell, mem::MaybeUninit, ptr, sync::atomic};
-        use libc;
 
         struct Barrier {
             lock: UnsafeCell<libc::pthread_mutex_t>,
