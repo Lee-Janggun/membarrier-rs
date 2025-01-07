@@ -111,6 +111,22 @@ mod default {
     pub fn heavy() {
         fence(Ordering::SeqCst);
     }
+
+    /// Issues a heavy memory barrier for slow path.
+    ///
+    /// It just issues the normal memory barrier instruction.
+    #[inline]
+    pub fn light_membarrier() {
+        light();
+    }
+
+    /// Issues a heavy memory barrier for slow path.
+    ///
+    /// It just issues the normal memory barrier instruction.
+    #[inline]
+    pub fn heavy_membarrier() {
+        heavy();
+    }
 }
 
 #[cfg(target_os = "linux")]
